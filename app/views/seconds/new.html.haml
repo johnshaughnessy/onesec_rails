@@ -1,0 +1,8 @@
+%h1 new second
+
+= form_for @second, html: {multipart: true} do |f|
+  = f.text_field :date
+  = f.text_field :uid
+  = f.file_field :video
+  = f.submit "Create"
+
