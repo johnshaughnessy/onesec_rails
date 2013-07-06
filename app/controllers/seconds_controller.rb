@@ -10,7 +10,7 @@ class SecondsController < ApplicationController
   end
 
   def create
-    @second = Second.create(params[:second])
+    @second = current_user.seconds.create(params[:second])
     if @second.save
       redirect_to second_path(@second)
     else
