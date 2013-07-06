@@ -2,7 +2,7 @@ class SecondsController < ApplicationController
   def index
     @seconds = Second.all
   end
-  
+
   def new 
     @second = Second.new
   end
@@ -20,3 +20,5 @@ class SecondsController < ApplicationController
     @second = Second.find(params[:id])
   end
 end
+
+#passenger gem
