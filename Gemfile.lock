@@ -78,11 +78,11 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     mysql2 (0.3.11)
-    orm_adapter (0.4.0)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.7)
     nokogiri (1.5.10)
+    orm_adapter (0.4.0)
     passenger (4.0.6)
       daemon_controller (>= 1.1.0)
       rack

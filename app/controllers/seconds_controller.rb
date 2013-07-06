@@ -1,6 +1,8 @@
 class SecondsController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
-    @seconds = Second.all
+    @seconds = current_user.seconds
   end
 
   def new 
