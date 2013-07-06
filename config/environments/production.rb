@@ -1,6 +1,9 @@
 Onesec::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # For devise
+  config.action_mailer.default_url_options = { :host => '54.218.123.27:3000' }
+
   # For videojs_rails
   config.assets.precompile += %w( video-js.swf vjs.eot vjs.svg vjs.ttf vjs.woff )
 
