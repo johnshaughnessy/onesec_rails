@@ -8,6 +8,15 @@ class MobileSecondsController < ApplicationController
     end
   end
 
+  def create
+    @second = @user.seconds.create(params[:second]) if @user
+    if @second.save
+      render :status=>200, :json=>{:message=>"Second has been created with #{@second.inspect}"}
+    else
+      render :status=>403, :json=>{:message=>"ya done fucked up son"}
+    end
+  end
+
   private
 
   def set_user_by_auth_token
