@@ -1,5 +1,5 @@
-class SecondsController < ApplicationController
-  before_filter :authenticate_user!
+class SecondsController < ApplicationController 
+  # before_filter :authenticate_user!
 
   def index
     @seconds = current_user.seconds
@@ -23,5 +23,4 @@ class SecondsController < ApplicationController
   end
 
 end
-
-#passenger gem
+ 
