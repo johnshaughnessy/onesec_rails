@@ -4,5 +4,5 @@ Onesec::Application.routes.draw do
 
   root to: 'seconds#index'
   resources :seconds
-  # resources :tokens,:only => [:create, :destroy]
+  resources :tokens,:only => [:create, :destroy]
 end
