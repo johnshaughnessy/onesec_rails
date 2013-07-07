@@ -1,5 +1,4 @@
 class SecondsController < ApplicationController
-  prepend_before_filter :get_auth_token
   before_filter :authenticate_user!
 
   def index
@@ -21,13 +20,6 @@ class SecondsController < ApplicationController
 
   def show
     @second = Second.find(params[:id])
-  end
-
-  private
-  def get_auth_token
-    if auth_token = params[:auth_token].blank? #&& request.headers["X-API-KEY"]
-      params[:auth_token] = auth_token
-    end
   end
 
 end
