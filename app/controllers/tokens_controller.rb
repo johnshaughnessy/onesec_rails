@@ -18,7 +18,7 @@ class TokensController  < ApplicationController
     @user=User.find_by_email(email.downcase)
  
     if @user.nil?
-      #logger.info("User #{email} failed signin, user cannot be found.")
+      logger.info("User #{email} failed signin, user cannot be found.")
       render :status=>401, :json=>{:message=>"Invalid email or passoword."}
       return
     end
@@ -27,8 +27,8 @@ class TokensController  < ApplicationController
     @user.ensure_authentication_token
  
     if not @user.valid_password?(password)
-      #logger.info("User #{email} failed signin, password \"#{password}\" is invalid")
-      render :status=>401, :json=>{:message=>"Invalid email or password."}
+      logger.info("User #{email} failed signin, password \"#{password}\" is invalid")
+      render :status=>401, :json=>{:message=>"Invalid email #{email} or password #{password}."}
     else
       render :status=>200, :json=>{:token=>@user.authentication_token}
     end
@@ -37,7 +37,7 @@ class TokensController  < ApplicationController
   def destroy
     @user=User.find_by_authentication_token(params[:id])
     if @user.nil?
-      #logger.info(“Token not found.”)
+      logger.info(“Token not found.”)
       render :status=>404, :json=>{:message=>"Invalid token."}
     else
       @user.reset_authentication_token!
