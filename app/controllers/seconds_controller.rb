@@ -1,6 +1,6 @@
 class SecondsController < ApplicationController 
-  # before_filter :authenticate_user!
-  before_filter :set_current_user
+  before_filter :authenticate_user!
+  # before_filter :set_current_user
 
   def index
     @seconds = current_user.seconds
@@ -25,10 +25,10 @@ class SecondsController < ApplicationController
 
   private
 
-  def set_current_user
-    current_user = User.find_by_email(params[:email])
-    current_user = User.first unless current_user
-  end
+  # def set_current_user
+  #   current_user = User.find_by_email(params[:email])
+  #   current_user = User.first unless current_user
+  # end
 
 end
  
