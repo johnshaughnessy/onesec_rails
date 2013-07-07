@@ -37,7 +37,7 @@ class TokensController  < ApplicationController
   def destroy
     @user=User.find_by_authentication_token(params[:id])
     if @user.nil?
-      logger.info(“Token not found.”)
+      logger.info("Token not found.")
       render :status=>404, :json=>{:message=>"Invalid token."}
     else
       @user.reset_authentication_token!
