@@ -9,6 +9,8 @@ class MobileSecondsController < ApplicationController
   end
 
   def create
+    auth_token = params[:token]
+    @user = User.find_by_authentication_token(auth_token)
     @second = @user.seconds.build(params[:second])
     raise 'fuck' unless @second
     if @second.save
