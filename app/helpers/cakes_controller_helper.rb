@@ -1,0 +1,2 @@
+module CakesControllerHelper
+end

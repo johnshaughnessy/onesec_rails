@@ -4,6 +4,7 @@ Onesec::Application.routes.draw do
 
   root to: 'seconds#index'
   resources :seconds
+  resources :cakes
   resources :tokens,:only => [:create, :destroy]
   resources :mobile_seconds, :only => [:create]
 

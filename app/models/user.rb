@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :authentication_token
   # attr_accessible :title, :body
   has_many :seconds
+  has_many :cakes
 
   before_save :ensure_authentication_token!
 end
