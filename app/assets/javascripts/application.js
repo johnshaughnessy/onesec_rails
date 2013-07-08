@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require_tree .
 //= require video-js
+// Loads all Bootstrap javascripts
+//= require bootstrap
