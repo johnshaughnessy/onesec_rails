@@ -1,0 +1,2 @@
+module MobileCakesHelper
+end
