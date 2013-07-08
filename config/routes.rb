@@ -2,7 +2,7 @@ Onesec::Application.routes.draw do
 
   devise_for :users
 
-  root to: 'seconds#index'
+  root to: 'home#index'
   resources :seconds
   resources :cakes
   resources :tokens,:only => [:create, :destroy]
