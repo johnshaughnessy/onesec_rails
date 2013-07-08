@@ -1,0 +1,7 @@
+%h1 new cake
+
+= form_for @cake, html: {multipart: true} do |f|
+  = f.text_field :uid
+  = f.file_field :video
+  = f.submit "Create"
+
