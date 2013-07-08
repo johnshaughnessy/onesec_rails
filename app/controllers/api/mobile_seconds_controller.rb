@@ -11,9 +11,9 @@ class MobileSecondsController < ApplicationController
   def create
     @second = @user.seconds.create(params[:second]) if @user
     if @second.save
-      render :status=>200, :json=>{:message=>"Second has been created with #{@second.inspect}"}
+      render :status=>200, :json=>{:message=>"Second has been created with #{@second.inspect} \n \n Also, user is #{@user.inspect}"}
     else
-      render :status=>403, :json=>{:message=>"ya done fucked up son"}
+      render :status=>403, :json=>{:message=>"Unable to create second"}
     end
   end
 
