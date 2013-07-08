@@ -22,7 +22,5 @@ class SecondsController < ApplicationController
     @second = Second.find(params[:id])
   end
 
-  private
-
 end
  
