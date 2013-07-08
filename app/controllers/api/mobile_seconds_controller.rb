@@ -22,7 +22,7 @@ class MobileSecondsController < ApplicationController
   def set_user_by_auth_token
     auth_token = params[:token]
     @user = User.find_by_authentication_token(auth_token)
-    return @user
+    raise 'NoUserERRORBLAHH' unless @user
   end
 
 end
