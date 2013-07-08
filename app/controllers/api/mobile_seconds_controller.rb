@@ -9,7 +9,7 @@ class MobileSecondsController < ApplicationController
   end
 
   def create
-    @second = @user.seconds.create(params[:second]) if @user
+    @second = @user.seconds.build(params[:second])
     if @second.save
       render :status=>200, :json=>{:message=>"Second has been created with #{@second.inspect} \n \n Also, user is #{@user.inspect}"}
     else
