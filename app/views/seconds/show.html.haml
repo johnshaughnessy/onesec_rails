@@ -2,3 +2,8 @@
 
 = video_player src: { mp4: "#{@second.video}" }, controls: true
 %p src: { mp4: '#{@second.video}' }, controls: true
+
+= form_for [@second, @sec_sprinkle], url: sec_sprinkles_path do |f|
+  = fields_for @sec_sprinkle do |u|
+    = u.text_field :tag
+  = f.submit "Create"

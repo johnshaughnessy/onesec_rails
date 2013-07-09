@@ -8,6 +8,7 @@ Onesec::Application.routes.draw do
   resources :tokens,:only => [:create, :destroy]
   resources :mobile_seconds, :only => [:create]
   resources :mobile_cakes, :only => [:create]
+  resources :sec_sprinkles, :only => [:create]
 
   get '/api/mobile_seconds', to: 'mobile_seconds#get_user_info'
   get '/api/mobile_cakes', to: 'mobile_cakes#get_user_info'
