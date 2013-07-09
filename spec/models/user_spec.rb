@@ -6,8 +6,7 @@ describe User do
   end
 
   it "should save to the database" do
-    # user = FactoryGirl.create(:user)
-    user = User.create(email: 'ex@ex.com', password: 'password', password_confirmation: 'password')
+    user = FactoryGirl.create(:user)
     user.should be_valid
   end
 end

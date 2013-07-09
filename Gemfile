@@ -6,11 +6,14 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 
 group :development, :test do
 	gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :test do
 	gem 'database_cleaner'
 	gem 'factory_girl_rails'
+  gem 'nyan-cat-formatter' #rspec --format NyanCatFormatter or NyanCatMusicFormatter
+  gem 'capybara'
 end
 
 # Bundle edge Rails instead:
