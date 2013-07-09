@@ -60,5 +60,16 @@ module Onesec
     config.assets.version = '1.0'
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+   
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.stylesheets = false
+      g.javascripts = false
+      g.helper = false
+   end
   end
 end
+
+

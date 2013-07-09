@@ -4,6 +4,15 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 
+group :development, :test do
+	gem 'rspec-rails'
+end
+
+group :test do
+	gem 'database_cleaner'
+	gem 'factory_girl_rails'
+end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

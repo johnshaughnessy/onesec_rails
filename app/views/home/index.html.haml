@@ -3,9 +3,9 @@
 %h3 
   = link_to "My Cakes", cakes_path
 - @cakes.each do |cake|
-  = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 300
+  = video_player src: { mp4: "#{cake.video}" }, controls: false, width: 300, height: 300
 
 %h3 
   = link_to "My Moments", seconds_path
 - @seconds.each do |second|
-  = video_player src: { mp4: "#{second.video}" }, controls: true, width: 200, height: 200
+  = video_player src: { mp4: "#{second.video}" }, controls: false, width: 200, height: 200
