@@ -4,8 +4,8 @@ class MobileSecSprinklesController < ApplicationController
   def create
     second = Second.find_by_uid(params[:second_uid])
     if second
-      second.sec_sprinkles << SecSprinkles.create(tag: params[:sprinkle_tag])
-      render :status=>200, :json=>{:message=>"Sprinkle has been created. These are the sprinkles: #{@second.sec_sprinkles.inspect}"}
+      second.sec_sprinkles << SecSprinkle.create(tag: params[:sprinkle_tag])
+      render :status=>200, :json=>{:message=>"Sprinkle has been created. These are the sprinkles: #{second.sec_sprinkles.inspect}"}
     else
       render :status=>403, :json=>{:message=>"Error creating sprinkle... something went wrong."}
     end
