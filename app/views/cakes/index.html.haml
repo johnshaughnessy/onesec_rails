@@ -1,3 +1,9 @@
 %h3 My Cakes
+
+= form_tag(cakes_search_path, method: :post) do 
+  = text_field_tag :tag
+  = submit_tag "Search"
+
 - @cakes.each do |cake|
-  = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 300
+  = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 220
+  = link_to "Show", cake_path(cake)

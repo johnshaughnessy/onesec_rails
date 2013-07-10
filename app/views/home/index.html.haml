@@ -1,13 +1,32 @@
 %h1 One Sec
 
-%h3 
-  = link_to "My Cakes", cakes_path
-- @cakes.each do |cake|
-  = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 250
-  = link_to "Show", cake_path(cake)
+- if current_user
+  %h3 
+    = link_to "My Cakes", cakes_path
+  - @cakes.each do |cake|
+    = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 250
+    = link_to "Show", cake_path(cake)
+    - if cake.cake_sprinkles
+      %p Click to search by sprinkle:
+      - cake.cake_sprinkles.each do |sprinkle|
+        = link_to "#{sprinkle.tag}", cakes_search_path(tag: sprinkle.tag), method: :post
 
-%h3 
-  = link_to "My Moments", seconds_path
-- @seconds.each do |second|
-  = video_player src: { mp4: "#{second.video}" }, controls: true, width: 200, height: 160
-  = link_to "Show", second_path(second)
+  %h3 
+    = link_to "My Moments", seconds_path
+  - @seconds.each do |second|
+    = video_player src: { mp4: "#{second.video}" }, controls: true, width: 200, height: 160
+    = link_to "Show", second_path(second)
+    - if second.sec_sprinkles
+      %p Click to search by sprinkle:
+      - second.sec_sprinkles.each do |sprinkle|
+        = link_to "#{sprinkle.tag}", seconds_search_path(tag: sprinkle.tag), method: :post
+      %br
+      %br
+
+-else
+  %h3 
+    Please 
+    = link_to "sign in", new_user_session_path
+    or
+    = link_to "sign up.", new_user_registration_path
+  = image_tag("unicorn_cake.jpg", alt: "unicon cake!!!")

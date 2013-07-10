@@ -2,3 +2,16 @@
 
 = video_player src: { mp4: "#{@cake.video}" }, controls: true
 %p src: { mp4: '#{@cake.video}' }, controls: true
+
+
+= form_for [@cake, @cake_sprinkle], url: cake_sprinkles_path do |f|
+  = fields_for @cake do |c|
+    = c.hidden_field :cake_id, value: @cake.id
+  = fields_for @cake_sprinkle do |u|
+    = u.label "New Sprinkle: "
+    = u.text_field :tag
+  = f.submit "Create"
+
+%h5 Sprinkles:
+- @cake_sprinkles.each do |s|
+  = link_to s.tag, cakes_search_path(tag: s.tag), method: :post

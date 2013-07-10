@@ -5,5 +5,5 @@
   = submit_tag "Search"
 
 - @seconds.each do |s|
-  = video_player src: { mp4: "#{s.video}" }, controls: true, width: 100, height: 100
+  = video_player src: { mp4: "#{s.video}" }, controls: true, width: 200, height: 130
   = link_to "Show", second_path(s)

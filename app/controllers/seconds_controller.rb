@@ -25,7 +25,6 @@ class SecondsController < ApplicationController
   end
 
   def search
-    Rails.logger.debug { "CALLED SEARCH" + params.inspect}
     @tag = params[:tag]
     @sec_sprinkles = SecSprinkle.where(tag: @tag)
     @seconds = []
