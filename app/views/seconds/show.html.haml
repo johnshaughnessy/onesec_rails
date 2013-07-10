@@ -4,6 +4,13 @@
 %p src: { mp4: '#{@second.video}' }, controls: true
 
 = form_for [@second, @sec_sprinkle], url: sec_sprinkles_path do |f|
+  = fields_for @second do |s|
+    = s.hidden_field :second_id, value: @second.id
   = fields_for @sec_sprinkle do |u|
+    = u.label "New Sprinkle: "
     = u.text_field :tag
   = f.submit "Create"
+
+%h5 Sprinkles:
+- @sec_sprinkles.each do |s|
+  %p * #{s.tag}

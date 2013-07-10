@@ -21,6 +21,7 @@ class SecondsController < ApplicationController
   def show
     @sec_sprinkle = SecSprinkle.new
     @second = Second.find(params[:id])
+    @sec_sprinkles = @second.sec_sprinkles
   end
 
 end
