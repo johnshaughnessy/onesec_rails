@@ -24,5 +24,17 @@ class SecondsController < ApplicationController
     @sec_sprinkles = @second.sec_sprinkles
   end
 
+  def search
+    Rails.logger.debug { "CALLED SEARCH" + params.inspect}
+    @tag = params[:tag]
+    @sec_sprinkles = SecSprinkle.where(tag: @tag)
+    @seconds = []
+    @sec_sprinkles.each do | sprinkle |
+      @seconds << Second.find_by_id(sprinkle.second_id)      
+    end
+    # @seconds = Second.where(sec_sprinkles.where(tag == params[:tag]))
+    render template: "seconds/index"
+  end
+
 end
  

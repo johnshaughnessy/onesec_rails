@@ -4,8 +4,10 @@
   = link_to "My Cakes", cakes_path
 - @cakes.each do |cake|
   = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 250
+  = link_to "Show", cake_path(cake)
 
 %h3 
   = link_to "My Moments", seconds_path
 - @seconds.each do |second|
   = video_player src: { mp4: "#{second.video}" }, controls: true, width: 200, height: 160
+  = link_to "Show", second_path(second)

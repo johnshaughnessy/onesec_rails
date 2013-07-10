@@ -12,4 +12,6 @@ Onesec::Application.routes.draw do
 
   get '/api/mobile_seconds', to: 'mobile_seconds#get_user_info'
   get '/api/mobile_cakes', to: 'mobile_cakes#get_user_info'
+  post '/seconds/search', to: 'seconds#search'
+
 end

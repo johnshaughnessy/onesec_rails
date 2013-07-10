@@ -13,4 +13,4 @@
 
 %h5 Sprinkles:
 - @sec_sprinkles.each do |s|
-  %p * #{s.tag}
+  = link_to s.tag, seconds_search_path(tag: s.tag), method: :post
