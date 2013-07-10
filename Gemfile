@@ -30,6 +30,7 @@ gem 'haml'
 gem 'fog', '~> 1.3.1'
 gem 'carrierwave'
 gem 'video-js-rails'
+gem 'carrierwave_direct'
 
 
 # Gems used only for assets and not required
