@@ -1,27 +1,24 @@
-%h1 One Sec
+.row-fluid 
+  .span3 
+    %h1 One Sec
+  - if current_user
+    .span9
+      = form_tag(cakes_search_path, method: :post) do 
+        = text_field_tag :tag, "search by sprinkle"
+        = submit_tag "Search"
 
-- if current_user
-  %h3 
-    = link_to "My Cakes", cakes_path
-  - @cakes.each do |cake|
-    = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 190
-    = link_to "Show", cake_path(cake)
-    - if cake.cake_sprinkles
-      %p Click to search by sprinkle:
-      - cake.cake_sprinkles.each do |sprinkle|
-        = link_to "#{sprinkle.tag}", cakes_search_path(tag: sprinkle.tag), method: :post
-
-  %h3 
-    = link_to "My Moments", seconds_path
-  - @seconds.each do |second|
-    = video_player src: { mp4: "#{second.video}" }, controls: true, width: 200, height: 130
-    = link_to "Show", second_path(second)
-    - if second.sec_sprinkles
-      %p Click to search by sprinkle:
-      - second.sec_sprinkles.each do |sprinkle|
-        = link_to "#{sprinkle.tag}", seconds_search_path(tag: sprinkle.tag), method: :post
-      %br
-      %br
+- if current_user 
+  .row-fluid
+    .span6
+      %h3 
+        = link_to "My Moments", seconds_path
+      - @seconds.each do |second|
+        = render 'home/second', second: second
+    .span6
+      %h3 
+        = link_to "My Cakes", cakes_path
+      - @cakes.each do |cake|
+        = render 'home/cake', cake:cake
 
 -else
   %h3 

@@ -1,0 +1,20 @@
+.row-fluid
+  .span4
+    = link_to "#{cake.title}", cake_path(cake)
+    / .video
+    = video_player src: { mp4: "#{cake.video}" }, controls: true, width: 300, height: 190
+  / .sprinkles
+  .span2.offset4
+    - if cake.cake_sprinkles
+      - sprinkle_count = 0
+      %ul
+        %li 
+          %br
+        - cake.cake_sprinkles.each do |sprinkle|
+          - if sprinkle_count < 4
+            %li
+              = link_to "##{sprinkle.tag}", cakes_search_path(tag: sprinkle.tag), method: :post
+          - if sprinkle_count == 4
+            %li 
+              = link_to "More", cake_path(cake)
+          - sprinkle_count += 1
