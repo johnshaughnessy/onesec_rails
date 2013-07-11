@@ -13,7 +13,7 @@
         - second.sec_sprinkles.each do |sprinkle|
           - if sprinkle_count < 4
             %li
-              = link_to "##{sprinkle.tag}", seconds_search_path(tag: sprinkle.tag), method: :post
+              = link_to "##{sprinkle.tag}", search_path(tag: sprinkle.tag), method: :post
           - if sprinkle_count == 4
             %li 
               = link_to "More", second_path(second)
