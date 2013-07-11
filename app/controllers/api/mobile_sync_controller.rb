@@ -1,7 +1,7 @@
 class MobileSyncController < ApplicationController
   before_filter :set_user_by_auth_token
 
-  def getSeconds
+  def get_seconds
     @seconds = @user.seconds
     if @seconds
       render :partial => "seconds_for_sync", object: @seconds
