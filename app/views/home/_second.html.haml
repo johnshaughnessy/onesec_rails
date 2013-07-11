@@ -18,3 +18,12 @@
             %li 
               = link_to "More", second_path(second)
           - sprinkle_count += 1
+        %li
+          = form_for [@second, @sec_sprinkle], url: sec_sprinkles_path do |f|
+            = fields_for @second do |c|
+              = c.hidden_field :second_id, value: second.id
+              = c.hidden_field :index, value: "yes"
+            = fields_for @sec_sprinkle do |u|
+              = u.label "+ #"
+              = u.text_field :tag
+            = f.submit "Create"

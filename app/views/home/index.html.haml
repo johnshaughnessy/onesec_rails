@@ -1,6 +1,7 @@
 .row-fluid 
   .span3 
-    %h1 One Sec
+    %h1 
+      = link_to "One Sec", root_path
   - if current_user
     .span9
       = form_tag(search_path, method: :post) do 

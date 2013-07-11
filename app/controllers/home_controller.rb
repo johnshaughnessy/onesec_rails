@@ -4,6 +4,10 @@ class HomeController < ApplicationController
     if current_user
       @cakes = current_user.cakes
   	  @seconds = current_user.seconds
+      @cake = Cake.new
+      @cake_sprinkle = CakeSprinkle.new
+      @second = Second.new
+      @sec_sprinkle = SecSprinkle.new
     end
   end
 
@@ -21,6 +25,10 @@ class HomeController < ApplicationController
         @seconds << Second.find_by_id(sec_sprinkle.second_id)      
       end  
     end
+    @cake = Cake.new
+    @cake_sprinkle = CakeSprinkle.new
+    @second = Second.new
+    @sec_sprinkle = SecSprinkle.new
     render template:"home/index"
   end
 end
