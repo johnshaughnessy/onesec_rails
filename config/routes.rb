@@ -21,5 +21,6 @@ Onesec::Application.routes.draw do
   post '/seconds/search', to: 'seconds#search'
   post '/cakes/search', to: 'cakes#search'
   post '/sync/seconds', to: 'mobile_sync#get_seconds'
+  post '/search', to:'home#search'
 
 end

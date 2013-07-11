@@ -3,7 +3,7 @@
     %h1 One Sec
   - if current_user
     .span9
-      = form_tag(cakes_search_path, method: :post) do 
+      = form_tag(search_path, method: :post) do 
         = text_field_tag :tag, "search by sprinkle"
         = submit_tag "Search"
 
