@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710160534) do
+ActiveRecord::Schema.define(:version => 20130711191337) do
 
   create_table "cake_sprinkles", :force => true do |t|
     t.string   "tag"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130710160534) do
     t.datetime "updated_at", :null => false
     t.string   "video"
     t.integer  "user_id"
+    t.string   "title"
   end
 
   create_table "sec_sprinkles", :force => true do |t|
