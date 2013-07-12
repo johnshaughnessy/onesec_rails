@@ -9,7 +9,7 @@
         = form_tag(search_path, method: :post) do 
           %input#tag{name:"tag", type:"text", placeholder:"search by sprinkle"}
           .search_button
-            %input{name:"commit", type:"image", src:image_path('search-icon.svg') }
+            %input{name:"commit", type:"image", src:image_path('search-icon.png') }
             / = submit_tag "Search"
     .span1
       .bottom

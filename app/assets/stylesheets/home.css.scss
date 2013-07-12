@@ -57,16 +57,16 @@ $neon_pink: #E23980;
 }
 
 .search_row {
-  padding-bottom: 0px;
+  padding: 25px 0px 0px 0px;
   #tag {
-    background-color: $light_yellow3;
+    background-color: $light_gray;
     padding: 8px;
     font-size: 18px;
     width: 320px;
   }
   .sign_out {
     a {
-      color: $light_yellow3;
+      color: $gray1;
     }
     
   }
@@ -78,7 +78,7 @@ $neon_pink: #E23980;
 
   .search_button {
     border-radius: 5px;
-    background-color:$light_yellow3;
+    background-color:transparent;
     float:right;
     padding-top: 0px;
     input {
