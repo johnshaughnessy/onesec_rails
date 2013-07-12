@@ -14,15 +14,44 @@ $pink5: #E48186;
 $light_gray: #eee;
 $gray1: #333130;
 $gray2: #262525;
+$gray3: #0F0F0F;
+$light_pink1: #FEE8E9;
+$light_pink3: #ECC2C3;
 $light_yellow1: #FFFEE9;
+$light_yellow3: #EDECC3;
 $light_green1: #DAEED9;
+$light_green3: #B8DDB6;
+$light_blue1: #D0D4E1;
+$light_blue3: #AEB7D1;
 $dark_red: #211010;
+$neon_green: #A0EE3C;
+$neon_blue: #3589B6;
+$neon_yellow: #FFE341;
+$neon_pink: #E23980;
+
 
 .background_back {
-  background-color: #0F0F0F;
+  background-color: $gray3;
 }
 
 .background_front{
   background-color: $gray2;
 }
 
+html {
+  background-color: $gray3;
+  color: $neon_pink;
+  a {
+    color: $neon_blue;
+  }
+  h2 { 
+    color: $neon_pink;
+  }
+  h3 {
+    color: $neon_pink;
+  }
+
+  label {
+    color: $neon_pink;
+  }
+}

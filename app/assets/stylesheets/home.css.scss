@@ -14,6 +14,7 @@ $pink5: #E48186;
 $light_gray: #eee;
 $gray1: #333130;
 $gray2: #262525;
+$gray3: #0F0F0F;
 $light_pink1: #FEE8E9;
 $light_pink3: #ECC2C3;
 $light_yellow1: #FFFEE9;
@@ -58,13 +59,26 @@ $neon_pink: #E23980;
 .search_row {
   padding-bottom: 0px;
   #tag {
+    background-color: $light_yellow3;
     padding: 8px;
     font-size: 18px;
-    width: 295px;
+    width: 320px;
+  }
+  .sign_out {
+    a {
+      color: $light_yellow3;
+    }
+    
+  }
+
+  .bottom {
+    padding-top: 38px;
   }
 
 
   .search_button {
+    border-radius: 5px;
+    background-color:$light_yellow3;
     float:right;
     padding-top: 0px;
     input {
