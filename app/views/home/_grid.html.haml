@@ -1,0 +1,17 @@
+.row 
+  .span8
+    .grid_column
+      .row
+        .span4
+          - seconds.each_with_index do |second, i|
+            - if i%2 == 1
+              =render 'home/second', second:second
+        .span4
+          - seconds.each_with_index do |second, i|
+            - if i%2 == 0
+              =render 'home/second', second:second
+
+  .span4
+    .grid_column
+      - cakes.each do |cake|
+        =render 'home/cake', cake:cake

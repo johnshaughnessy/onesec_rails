@@ -2,7 +2,120 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-ul
-{
-    list-style-type: none;
+$green1: #5AB750;
+$green3: #3B9732;
+$green5: #7AC972;
+$blue1: #4A6395;
+$blue3: #2E487B;
+$blue5: #6B82AF;
+$pink1: #DB6067;
+$pink3: #B53C42;
+$pink5: #E48186;
+$light_gray: #eee;
+$gray1: #333130;
+$gray2: #262525;
+
+.rainbow {
+  a {
+    background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
+    -webkit-background-clip: text;
+  }
+
+}
+
+.search_row {
+  padding-bottom: 30px;
+  #tag {
+    float:left;
+    padding: 10px;
+    font-size: 18px;
+    width: 500px;
+  }
+
+  .search_button {
+    float:left;
+    input {
+      height: 42px;
+    }
+  }
+}
+
+.row .thin_strip {
+  text-align: center;
+  padding-top:2px;
+  padding-bottom:24px;
+
+  background-color: $gray2;
+
+  a {
+    font-size: 18px;
+    color: $pink5;
+  }
+  
+}
+
+.grid_item {
+  padding: 5px;
+  background-color: $light_gray;
+  margin: 5px;
+
+  .sec_title_bar {
+    text-align: center;
+    a {
+      font-size: 22px;
+      color: $pink5;
+    }
+  }
+
+  .cake_title_bar {
+    text-align: center;
+    a {
+      font-size: 22px;
+      color:$pink5;
+    }
+  }
+
+  .video_box {
+    .video-js {
+      border-style:solid;
+      border-width:2px;
+      border-color:$pink5;
+    }
+  }
+
+  .spinkle_bar {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .sprinkle {
+    display: inline;
+    li {
+      display: inline;
+    }
+  }
+
+  .add_sprinkle_bar {
+    padding:0px;
+  }
+
+  .sprinkle_tag {
+    input {
+      float:left;
+      padding: 1px;
+      margin: 0px;
+    }
+  }
+
+  .sprinkle_create_button {
+
+  }
+}
+
+.grid_column {
+  background-color: $gray2;
 }

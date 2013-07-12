@@ -1,29 +1,28 @@
-.row-fluid
-  .span4
+.grid_item
+  .sec_title_bar
     = link_to "#{second.date}", second_path(second)
-    / .video
-    = video_player src: { mp4: "#{second.video}" }, controls: true, width: 300, height: 190
-  / .sprinkles
-  .span2.offset4
-    - if second.sec_sprinkles
+  .video_box
+    =video_player src: { mp4: "#{second.video}" }, controls: true, width: 260, height: 180
+  .sprinkle_bar
+    %ul
       - sprinkle_count = 0
-      %ul
-        %li 
-          %br
-        - second.sec_sprinkles.each do |sprinkle|
-          - if sprinkle_count < 4
+      - second.sec_sprinkles.each do |sprinkle|
+        - if sprinkle_count < 3
+          .sprinkle
             %li
               = link_to "##{sprinkle.tag}", search_path(tag: sprinkle.tag), method: :post
-          - if sprinkle_count == 4
+        - if sprinkle_count == 4
+          .sprinkle
             %li 
               = link_to "More", second_path(second)
-          - sprinkle_count += 1
-        %li
-          = form_for [@second, @sec_sprinkle], url: sec_sprinkles_path do |f|
-            = fields_for @second do |c|
-              = c.hidden_field :second_id, value: second.id
-              = c.hidden_field :index, value: "yes"
-            = fields_for @sec_sprinkle do |u|
-              = u.label "+ #"
-              = u.text_field :tag
-            = f.submit "Create"
+        - sprinkle_count += 1
+  .add_sprinkle_bar
+    = form_for [@second, @sec_sprinkle], url: sec_sprinkles_path do |f|
+      = fields_for @second do |c|
+        = c.hidden_field :second_id, value: second.id
+        = c.hidden_field :index, value: "yes"
+      = fields_for @sec_sprinkle do |u|
+        .sprinkle_tag
+          = u.text_field :tag
+      .sprinkle_create_button
+        = f.submit "Create"

@@ -1,30 +1,6 @@
-.row-fluid 
-  .span3 
-    %h1 
-      = link_to "One Sec", root_path
-  - if current_user
-    .span9
-      = form_tag(search_path, method: :post) do 
-        = text_field_tag :tag, "search by sprinkle"
-        = submit_tag "Search"
-
 - if current_user 
-  .row-fluid
-    .span6
-      %h3 
-        = link_to "My Moments", seconds_path
-      - @seconds.each do |second|
-        = render 'home/second', second: second
-    .span6
-      %h3 
-        = link_to "My Cakes", cakes_path
-      - @cakes.each do |cake|
-        = render 'home/cake', cake:cake
-
+  = render 'home/search_row'
+  = render 'home/thin_moments_cakes_strip'
+  = render 'home/grid', seconds:@seconds, cakes:@cakes
 -else
-  %h3 
-    Please 
-    = link_to "sign in", new_user_session_path
-    or
-    = link_to "sign up.", new_user_registration_path
-  = image_tag("unicorn_cake.jpg", alt: "unicon cake!!!")
+  = render 'home/please_sign_in'

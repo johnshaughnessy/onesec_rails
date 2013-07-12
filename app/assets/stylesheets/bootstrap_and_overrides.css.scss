@@ -1,3 +1,25 @@
 @import "bootstrap";
-body { padding-top: 60px; }
+body { padding-top: 0px; }
 // @import "bootstrap-responsive";
+
+$green1: #5AB750;
+$green3: #3B9732;
+$green5: #7AC972;
+$blue1: #4A6395;
+$blue3: #2E487B;
+$blue5: #6B82AF;
+$pink1: #DB6067;
+$pink3: #B53C42;
+$pink5: #E48186;
+$light_gray: #eee;
+$gray1: #333130;
+$gray2: #262525;
+
+.background_back {
+  background-color: $gray2;
+}
+
+.background_front{
+  background-color: $gray1;
+}
+
