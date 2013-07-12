@@ -1,17 +1,37 @@
-.row 
+.row
   .span8
-    .grid_column
-      .row
+    .grid_column.left_margin
+      .row.no-space
         .span4
           - seconds.each_with_index do |second, i|
-            - if i%2 == 1
-              =render 'home/second', second:second
+            - if i%4 == 1
+              .grid_item_background_1
+                =render 'home/second', second:second
+            - if i%4 == 3
+              .grid_item_background_3
+                =render 'home/second', second:second
         .span4
           - seconds.each_with_index do |second, i|
-            - if i%2 == 0
-              =render 'home/second', second:second
+            - if i%4 == 2
+              .grid_item_background_2
+                =render 'home/second', second:second
+            - if i%4 == 0
+              .grid_item_background_4
+                =render 'home/second', second:second
 
   .span4
     .grid_column
-      - cakes.each do |cake|
-        =render 'home/cake', cake:cake
+      - cakes.each_with_index do |cake, i|
+        - if i%4 == 0
+          .grid_item_background_1
+            =render 'home/cake', cake:cake
+        - if i%4 == 2
+          .grid_item_background_2
+            =render 'home/cake', cake:cake
+        - if i%4 == 3
+          .grid_item_background_3
+            =render 'home/cake', cake:cake
+        - if i%4 == 1
+          .grid_item_background_4
+            =render 'home/cake', cake:cake
+    

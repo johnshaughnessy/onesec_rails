@@ -1,10 +1,10 @@
 .row-fluid.search_row
-  .span3
+  .span4
     %h1
       .rainbow
-        = link_to "Sprinkles", root_path
+        = link_to "SPRINKLES", root_path
   - if current_user
-    .span9
+    .span5.offset2
       .wide_form
         = form_tag(search_path, method: :post) do 
           = text_field_tag :tag, "search by sprinkle"

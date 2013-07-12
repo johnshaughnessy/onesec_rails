@@ -1,9 +1,9 @@
 .grid_item
+  .video_box
+    =video_player src: { mp4: "#{cake.video}" }, controls: true, width: 275, height: 180
   .cake_title_bar
     - title = "#{cake.title}" == "" ? "untitled" : "#{cake.title}"
     = link_to title, cake_path(cake)
-  .video_box
-    =video_player src: { mp4: "#{cake.video}" }, controls: true, width: 260, height: 180
   .sprinkle_bar
     %ul
       - sprinkle_count = 0
@@ -17,13 +17,15 @@
             %li 
               = link_to "More", cake_path(cake)
         - sprinkle_count += 1
-  .add_sprinkle_bar
-    = form_for [@cake, @cake_sprinkle], url: cake_sprinkles_path do |f|
-      = fields_for @cake do |c|
-        = c.hidden_field :cake_id, value: cake.id
-        = c.hidden_field :index, value: "yes"
-      = fields_for @cake_sprinkle do |u|
-        .sprinkle_tag
-          = u.text_field :tag
-      .sprinkle_create_button
-        = f.submit "Create"
+      .sprinkle 
+        %li
+          .add_sprinkle_bar
+            = form_for [@cake, @cake_sprinkle], url: cake_sprinkles_path do |f|
+              = fields_for @cake do |c|
+                = c.hidden_field :cake_id, value: cake.id
+                = c.hidden_field :index, value: "yes"
+              = fields_for @cake_sprinkle do |u|
+                .sprinkle_tag
+                  = u.text_field :tag
+              .sprinkle_create_button
+                = f.submit "+"
