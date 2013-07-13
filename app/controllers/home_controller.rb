@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class HomeController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
   def index
@@ -25,6 +26,8 @@ class HomeController < ApplicationController
         @seconds << Second.find_by_id(sec_sprinkle.second_id)      
       end  
     end
+    @seconds = @seconds.paginate(:page => params[:seconds_page], per_page: 12)
+    @cakes = @cakes.paginate(:page => params[:cakes_page], per_page: 6)
     @cake = Cake.new
     @cake_sprinkle = CakeSprinkle.new
     @second = Second.new
