@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
   def index
     if current_user
-      @cakes = current_user.cakes
-  	  @seconds = current_user.seconds
+      @cakes = current_user.cakes.paginate(:page => params[:page])
+  	  @seconds = current_user.seconds.paginate(:page => params[:page], per_page: 12)
       @cake = Cake.new
       @cake_sprinkle = CakeSprinkle.new
       @second = Second.new
