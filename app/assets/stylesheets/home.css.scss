@@ -120,24 +120,28 @@ $neon_pink: #E23980;
 
 .grid_item {
   padding: 6px;
+  padding-bottom: 0px;
   margin: 8px;
 
   .sec_title_bar {
-    text-align: center;
-    float: left;
+    text-align: left;
+    padding-left: 8px;
+    float: none;
     a {
+      display: inline;
       font-size: 22px;
       color: $gray2;
     }
   }
 
   .cake_title_bar {
-    float: left;
+    text-align: left;
     padding-left: 8px;
+    float: none;
     a {
       display: inline;
       font-size: 22px;
-      color:$gray2;
+      color: $gray2;
     }
   }
 
