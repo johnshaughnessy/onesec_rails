@@ -31,7 +31,7 @@ $neon_pink: #E23980;
 
 .rainbow {
   a {
-    font-size: 64px;
+    font-size: 70px;
     font-family: Impact;
     // background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
     background-image:-webkit-gradient( linear, left top, right top, color-stop(0.15, $neon_pink),  color-stop(0.35, $neon_blue), color-stop(0.65, $neon_green), color-stop(0.9, $neon_yellow) );
@@ -57,6 +57,9 @@ $neon_pink: #E23980;
 }
 
 .search_row {
+  .sprinkles_header {
+    padding-left: 70px;
+  }
   padding: 25px 0px 0px 0px;
   #tag {
     background-color: $light_gray;
