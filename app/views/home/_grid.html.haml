@@ -36,7 +36,7 @@
             =render 'home/cake', cake:cake
 .row
   .span8
-    =will_paginate seconds
+    =will_paginate seconds, param_name: 'seconds_page'
   .span4
-    =will_paginate cakes
+    =will_paginate cakes, param_name: 'cakes_page'
     
