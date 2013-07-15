@@ -1,31 +1,34 @@
 .grid_item
   .video_box
     =video_player src: { mp4: "#{cake.video}" }, controls: true, width: 275, height: 180
-  .cake_title_bar
-    - title = "#{cake.title}" == "" ? "untitled" : "#{cake.title}"
-    = link_to title, cake_path(cake)
-  .sprinkle_bar
-    %ul
-      - sprinkle_count = 0
-      - cake.cake_sprinkles.each do |sprinkle|
-        - if sprinkle_count < 3
-          .sprinkle
-            %li
-              = link_to "##{sprinkle.tag}", search_path(tag: sprinkle.tag), method: :post
-        - if sprinkle_count == 4
-          .sprinkle
-            %li 
-              = link_to "More", cake_path(cake)
-        - sprinkle_count += 1
-      .sprinkle 
-        %li
-          .add_sprinkle_bar
+  .cake_desciption
+    %table
+      %tr
+        %td
+          .cake_title_bar
+            - title = "#{cake.title}" == "" ? "untitled" : "#{cake.title}"
+            = link_to title, cake_path(cake)
+        %td
+          .newsprinkle_form
             = form_for [@cake, @cake_sprinkle], url: cake_sprinkles_path do |f|
-              = fields_for @cake do |c|
-                = c.hidden_field :cake_id, value: cake.id
-                = c.hidden_field :index, value: "yes"
-              = fields_for @cake_sprinkle do |u|
-                .sprinkle_tag
+              .newsprinkle_form_box
+                = fields_for @cake do |c|
+                  = c.hidden_field :cake_id, value: cake.id
+                  = c.hidden_field :index, value: "yes"
+                = fields_for @cake_sprinkle do |u|
                   = u.text_field :tag
-              .sprinkle_create_button
-                = f.submit "+"
+              .newsprinkle_button
+                %input{name:"commit", type:"image", src:image_path('plus_white.png')}
+    .sprinkle_list
+      %ul
+        - sprinkle_count = 0
+        - cake.cake_sprinkles.each do |sprinkle|
+          - if sprinkle_count < 3
+            .sprinkle
+              %li
+                = link_to "##{sprinkle.tag}", search_path(tag: sprinkle.tag), method: :post
+          - if sprinkle_count == 4
+            .sprinkle
+              %li
+                = link_to "More", cake_path(cake)
+          - sprinkle_count += 1

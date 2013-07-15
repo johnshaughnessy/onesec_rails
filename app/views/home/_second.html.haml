@@ -1,32 +1,34 @@
 .grid_item
-
   .video_box
     =video_player src: { mp4: "#{second.video}" }, controls: true, width: 275, height: 180
-  .sec_title_bar
-    - date = "#{second.date}" == "" ? "date" : "#{second.date}"
-    = link_to date, second_path(second)
-  .sprinkle_bar
-    %ul
-      - sprinkle_count = 0
-      - second.sec_sprinkles.each do |sprinkle|
-        - if sprinkle_count < 3
-          .sprinkle
-            %li
-              = link_to "##{sprinkle.tag}", search_path(tag: sprinkle.tag), method: :post
-        - if sprinkle_count == 4
-          .sprinkle
-            %li 
-              = link_to "More", second_path(second)
-        - sprinkle_count += 1
-      .sprinkle
-        %li
-          .add_sprinkle_bar
+  .sec_desciption
+    %table
+      %tr
+        %td
+          .sec_title_bar
+            - date = "#{second.date}" == "" ? "date" : "#{second.date}"
+            = link_to date, second_path(second)
+        %td
+          .newsprinkle_form
             = form_for [@second, @sec_sprinkle], url: sec_sprinkles_path do |f|
-              = fields_for @second do |c|
-                = c.hidden_field :second_id, value: second.id
-                = c.hidden_field :index, value: "yes"
-              = fields_for @sec_sprinkle do |u|
-                .sprinkle_tag
+              .newsprinkle_form_box
+                = fields_for @second do |c|
+                  = c.hidden_field :second_id, value: second.id
+                  = c.hidden_field :index, value: "yes"
+                = fields_for @sec_sprinkle do |u|
                   = u.text_field :tag
-              .sprinkle_create_button
-                = f.submit "+"
+              .newsprinkle_button
+                %input{name:"commit", type:"image", src:image_path('plus_white.png')}
+    .sprinkle_list
+      %ul
+        - sprinkle_count = 0
+        - second.sec_sprinkles.each do |sprinkle|
+          - if sprinkle_count < 3
+            .sprinkle
+              %li
+                = link_to "##{sprinkle.tag}", search_path(tag: sprinkle.tag), method: :post
+          - if sprinkle_count == 4
+            .sprinkle
+              %li
+                = link_to "More", second_path(second)
+          - sprinkle_count += 1

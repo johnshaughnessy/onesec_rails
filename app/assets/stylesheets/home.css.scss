@@ -105,7 +105,6 @@ $neon_pink: #E23980;
     font-size: 18px;
     color: $light_gray;
   }
-  
 }
 
 .grid_item_background_1{
@@ -126,73 +125,31 @@ $neon_pink: #E23980;
   padding-bottom: 0px;
   margin: 8px;
 
-  .sec_title_bar {
-    text-align: left;
-    padding-left: 8px;
-    float: none;
-    a {
-      display: inline;
-      font-size: 22px;
-      color: $gray2;
-    }
+  .sprinkle_list ul {
+    margin-left:0px;
   }
 
-  .cake_title_bar {
-    text-align: left;
-    padding-left: 8px;
-    float: none;
-    a {
-      display: inline;
-      font-size: 22px;
-      color: $gray2;
-    }
+  .newsprinkle_form {
+    margin: 10px 0px 0px 20px;
+    overflow:hidden;
   }
 
-  .video_box {
-    margin-left: -3px;
-    .video-js {
-      border-style:solid;
-      border-width:2px;
-      border-color:$gray2;
-    }
-  }
-
-  .spinkle_bar ul {
-    margin: 0;
-    
-  }
-
-  .sprinkle {
-
-    font-size: 12px;
-    display: inline;
-    li {
-      display: inline;
-      a {
-        color: $gray2;
-      }
-    }
-  }
-
-  .add_sprinkle_bar {
-    display: inline;
-    padding:0px;
-    form {
-      display: inline;
-      margin: 0;
-    }
-  }
-
-  .sprinkle_tag {
-    display: inline;
+  .newsprinkle_form_box {
+    float:left;
+    margin-right: 3px;
     input {
-      padding: 1px;
+      font-size: 12px;
+      height: 15px;
       width: 50px;
     }
   }
 
-  .sprinkle_create_button {
-    display: inline;
+  .newsprinkle_button {
+    float:left;
+    margin-top: 1px;
+    input {
+      width: 20px;
+    }
   }
 }
 
